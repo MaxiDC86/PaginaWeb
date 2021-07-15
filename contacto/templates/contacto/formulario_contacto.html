@@ -1,0 +1,54 @@
+{% extends "PaginaWebApp/base.html" %}
+
+{%load static %}
+
+
+{% block content %}
+
+
+
+<h1 style="color: white;">Contáctanos</h1>
+
+    {% if form.errors %}
+
+    <p style="color: red;">Por favor completa todos los campos.</p>
+
+    {% endif %}
+
+<form method="POST" id="contactForm" name="contactForm" class="contactForm"> {% csrf_token %}
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label class="label" for="name">Nombre y apellido</label>
+				<input type="text" class="form-control" name="nombre" id="name" placeholder="Nombre y apellido">
+			</div>
+		</div>
+        <div class="col-md-6"> 
+			<div class="form-group">
+				<label class="label" >E-mail</label>
+				<input type="email" class="form-control" name="email" id="email" placeholder="ejemplo@ejemplo.com">
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="form-group">
+				<label class="label" >Asunto</label>
+				<input type="text" class="form-control" name="asunto" id="subject" placeholder="Asunto">
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="form-group">
+				<label class="label" for="#">Mensaje</label>
+				<textarea name="mensaje" class="form-control" id="message" cols="30" rows="4" placeholder="máximo 3000 caracteres"></textarea>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="form-group">
+				<input type="submit" value="Enviar" class="btn btn-primary">
+					<div class="submitting"></div>
+			</div>
+		</div>
+	</div>
+</form>
+
+
+{% endblock %}

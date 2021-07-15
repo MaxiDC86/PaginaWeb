@@ -1,0 +1,21 @@
+{% extends "PaginaWebApp/base.html" %}
+
+{%load static %}
+
+
+{% block content %}
+
+
+    <h1>Contáctanos</h1>
+
+    <form  action="/contacto/" method="POST">{% csrf_token %}
+    <input type="text" name="nombre"></p>
+    <input type="text" name="asunto"></p>
+    <input type="text" name="email"></p>
+    <textarea name="mensaje" rows="15" cols="45"></textarea>
+    <input type="submit" value="Enviar">
+    </form>
+
+   
+
+{% endblock %}
