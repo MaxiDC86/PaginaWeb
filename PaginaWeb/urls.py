@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from django.config import settings
+from django.conig.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,4 +33,4 @@ urlpatterns = [
     path('tienda/',include('tienda.urls')),
 
     path('carro/',include('carro.urls')),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
