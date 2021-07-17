@@ -1,1 +1,1 @@
-web: python manage.py collectstatic --no-input; gunicorn PaginaWeb.wsgi --log-file -
+web: gunicorn PaginaWeb.wsgi --log-file -
