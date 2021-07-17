@@ -22,11 +22,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ['DEBUG']
+DEBUG = True # os.environ['DEBUG']
 
 # ALLOWED_HOSTS = ['paginawebmaxi.herokuapp.com']
 
-ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS']
+ALLOWED_HOSTS =  ['*'] # os.environ['ALLOWED_HOSTS']
 
 # Application definition
 
@@ -150,6 +150,5 @@ EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
 
 # Configure Django App for Heroku
 
-import django_heroku
-
-django_heroku.settings(locals())
+# import django_heroku
+# django_heroku.settings(locals())
