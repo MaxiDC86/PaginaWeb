@@ -1,9 +1,9 @@
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect 
 from django.http import HttpResponse
 from django.forms import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm
 
-from django.contrib.auth import authenticate, login, logout
 
 from django.contrib import messages
 
@@ -28,7 +28,7 @@ def registerPage(request):
 			if form.is_valid():
 				form.save()
 				user = form.cleaned_data.get('username')
-				messages.success(request, 'Account was created for ' + user)
+				messages.success(request, 'La cuenta fue creada para ' + user)
 
 				return redirect('Login')
 			
@@ -50,7 +50,7 @@ def loginPage(request):
 				login(request, user)
 				return redirect('Home')
 			else:
-				messages.info(request, 'Username OR password is incorrect')
+				messages.info(request, 'El usuario o contraseña es incorrecta ')
 
 		context = {}
 		return render(request, 'PaginaWebApp/login.html', context)
