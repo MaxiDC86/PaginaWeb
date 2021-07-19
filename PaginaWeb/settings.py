@@ -83,8 +83,13 @@ WSGI_APPLICATION = 'PaginaWeb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgres_psycopg2',
+        'NAME': 'd82cf8sspbc5el',
+        'USER': 'lzgoewfdgydhmv',
+        'PASSWORD': '924a7ddd876ee2bd19905bee08a523fb37a9327b8e3b111f9037138fad7946c3',
+        'HOST': 'ec2-23-20-124-77.compute-1.amazonaws.com',
+        'DATABASE_PORT': '5432',
+
     }
 }
 
