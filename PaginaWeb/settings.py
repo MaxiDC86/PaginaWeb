@@ -19,14 +19,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-SECRET_KEY = 'asdasfasaf'# os.environ['SECRET_KEY']
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True # os.environ['DEBUG']
+DEBUG = os.environ['DEBUG']
 
-# ALLOWED_HOSTS = ['paginawebmaxi.herokuapp.com']
-
-ALLOWED_HOSTS =  ['*'] # os.environ['ALLOWED_HOSTS']
+ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS']
 
 # Application definition
 
@@ -83,11 +81,15 @@ WSGI_APPLICATION = 'PaginaWeb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd82cf8sspbc5el',
+        'USER': 'lzgoewfdgydhmv',
+        'PASSWORD': '924a7ddd876ee2bd19905bee08a523fb37a9327b8e3b111f9037138fad7946c3',
+        'HOST': 'ec2-23-20-124-77.compute-1.amazonaws.com',
+        'DATABASE_PORT': '5432',
+
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -119,7 +121,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -145,8 +147,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_PASSWORD = 'asdasd@gmail.com'# os.environ['EMAIL_HOST_PASSWORD']
-EMAIL_HOST_USER = 'adasdasd@gmail.com' # os.environ['EMAIL_HOST_USER'] 
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER'] 
 
 # Configure Django App for Heroku
 
