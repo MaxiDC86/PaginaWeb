@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.core.mail import send_mail
 from .carro import Carro
 
 from tienda.models import Producto
@@ -51,5 +51,7 @@ def comprar(request):
     carro = Carro(request)
 
     print(carro)
+    
+    send_mail('Compra', 'quiero comprar los siguientes articulos', 'pepe@gmail.com' ,['mdiascorreia86@gmail.com'],fail_silently=False,)
 
     return redirect("Tienda")
