@@ -1,24 +1,66 @@
-<ion-button _ngcontent-serverapp-c133="" size="large" class="md button button-large button-clear in-toolbar ion-activatable ion-focusable hydrated"><!---->
-
-    <button type="button" class="button-native" part="native">
-
-        <span class="button-inner">
-            <slot name="icon-only"></slot>
-            <slot name="start"></slot>
-            <slot></slot>
-            <slot name="end"></slot></span>
-        <ion-ripple-effect role="presentation" class="md hydrated">
-        </ion-ripple-effect>
-    </button>
-    <ion-icon _ngcontent-serverapp-c133="" name="cart-outline" size="large" role="img" class="md icon-large hydrated" aria-label="cart outline">
-        <div class="icon-inner">
-        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512">
-        <title>Cart</title>
-        <circle cx="176" cy="416" r="16" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></circle>
-        <circle cx="400" cy="416" r="16" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></circle>
-        <path stroke-linecap="round" stroke-linejoin="round" d="M48 80h64l48 272h256" class="ionicon-fill-none ionicon-stroke-width"></path>
-        <path d="M160 288h249.44a8 8 0 007.85-6.43l28.8-144a8 8 0 00-7.85-9.57H128" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></path>
-        </svg>
+<ion-app>
+    <ion-menu side="start" menu-id="first" content-id="main">
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Start Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-item>Menu Item</ion-item>
+          <ion-item>Menu Item</ion-item>
+          <ion-item>Menu Item</ion-item>
+          <ion-item>Menu Item</ion-item>
+          <ion-item>Menu Item</ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+  
+    <ion-menu side="start" menu-id="custom" class="my-custom-menu" content-id="main">
+      <ion-header>
+        <ion-toolbar color="tertiary">
+          <ion-title>Custom Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-item>Menu Item</ion-item>
+          <ion-item>Menu Item</ion-item>
+          <ion-item>Menu Item</ion-item>
+          <ion-item>Menu Item</ion-item>
+          <ion-item>Menu Item</ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+  
+    <ion-menu side="end" type="push" content-id="main">
+      <ion-header>
+        <ion-toolbar color="danger">
+          <ion-title>End Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-item>Menu Item</ion-item>
+          <ion-item>Menu Item</ion-item>
+          <ion-item>Menu Item</ion-item>
+          <ion-item>Menu Item</ion-item>
+          <ion-item>Menu Item</ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+  
+    <div class="ion-page" id="main">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Menu - Basic</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-button expand="block" onclick="openFirst()">Open Start Menu</ion-button>
+        <ion-button expand="block" onclick="openEnd()">Open End Menu</ion-button>
+        <ion-button expand="block" onclick="openCustom()">Open Custom Menu</ion-button>
+      </ion-content>
     </div>
-</ion-icon>
-</ion-button>
+  
+  </ion-app>
