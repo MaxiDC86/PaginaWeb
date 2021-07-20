@@ -269,26 +269,5 @@
     <!-- Bootstrap -->
     <script src="{% static 'PaginaWebApp/vendor/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'PaginaWebApp/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-    <!-- IONIC JAVASCRIPT-->
-    <script type="module">
-      import { menuController } from "@ionic/core";
-      window.menuController = menuController;
-    </script>
-
-    <script>
-      function openFirst() {
-        menuController.enable(true, "first");
-        menuController.open("first");
-      }
-
-      function openEnd() {
-        menuController.open("end");
-      }
-
-      function openCustom() {
-        menuController.enable(true, "custom");
-        menuController.open("custom");
-      }
-    </script>
   </body>
 </html>
