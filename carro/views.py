@@ -53,6 +53,6 @@ def comprar(request):
     for key, value in request.session.carro.items:
         carroCompra = carroCompra.append(value.nombre)
     carroCompraMail = "".join(carroCompra)
-    send_mail('Compra', carroCompraMail, 'pepe@gmail.com' ,['mdiascorreia86@gmail.com'],fail_silently=False,)
+    send_mail('Compra', str(carroCompraMail), 'pepe@gmail.com' ,['mdiascorreia86@gmail.com'],fail_silently=False,)
 
     return redirect("Tienda")
