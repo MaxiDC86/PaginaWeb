@@ -48,10 +48,11 @@ def limpiar_carro(request):
 
 def comprar(request):
 
-    carro = Carro(request)
+    carroCompra = []
 
-    print(carro)
-    
-    send_mail('Compra', 'quiero comprar los siguientes articulos', 'pepe@gmail.com' ,['mdiascorreia86@gmail.com'],fail_silently=False,)
+    for key, value in request.session.carro.items:
+        carroCompra.append(value)
+
+    send_mail('Compra', carroCompra, 'pepe@gmail.com' ,['mdiascorreia86@gmail.com'],fail_silently=False,)
 
     return redirect("Tienda")
