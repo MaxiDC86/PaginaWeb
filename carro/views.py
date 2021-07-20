@@ -45,3 +45,11 @@ def limpiar_carro(request):
     carro.limpiar_carro()
 
     return redirect("Tienda")
+
+def comprar(request):
+
+    carro = Carro(request)
+
+    print(carro)
+
+    return redirect("Tienda")
