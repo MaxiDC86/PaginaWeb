@@ -48,8 +48,8 @@ def limpiar_carro(request):
 
 def comprar(request):
 
-    carro = Carro(request)
+    # carro = Carro(request)
 
-    carro.comprar()
+    send_mail('Compra', 'pedido de herramientas', 'pepe@gmail.com' ,['mdiascorreia86@gmail.com'],fail_silently=False,)
 
     return redirect("Tienda")

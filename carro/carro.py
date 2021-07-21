@@ -48,11 +48,3 @@ class Carro:
     def limpiar_carro(self):
         self.session["carro"] = {}
         self.session.modified = True
-
-    def comprar(self):
-
-   
-        carroCompra = self.session["carro"]
-        carroCompra = str(carroCompra)
-                   
-        send_mail('Compra', 'pedido de herramientas', 'pepe@gmail.com' ,['mdiascorreia86@gmail.com'],fail_silently=False,)
