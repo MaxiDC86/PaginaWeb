@@ -51,6 +51,8 @@ class Carro:
 
     def comprar(self):
 
-        carroCompra = self.carro.items()
+   
+        carroCompra = self.session["carro"]
+        carroCompra = str(carroCompra)
                    
-        send_mail('Compra', str(carroCompra), 'pepe@gmail.com' ,['mdiascorreia86@gmail.com'],fail_silently=False,)
+        send_mail('Compra', carroCompra, 'pepe@gmail.com' ,['mdiascorreia86@gmail.com'],fail_silently=False,)
