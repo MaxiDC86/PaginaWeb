@@ -49,14 +49,14 @@ def limpiar_carro(request):
 def comprar(request):
 
     # carro = Carro(request)
-    infForm = []
+   
 
-    infForm['asunto'] = "Cotizacion"
+    asunto = "Cotizacion"
 
-    infForm['mensaje'] = "Hola quiero saber el precio de los siguentes repuestos"
+    mensaje = "Hola quiero saber el precio de los siguentes repuestos"
 
-    infForm['email'] = "pepe@gmail.com"
+    email = "pepe@gmail.com"
 
-    send_mail(infForm['asunto'], infForm['mensaje'], infForm['email'] ,['mdiascorreia86@gmail.com'],fail_silently=False)
+    send_mail(asunto, mensaje, email ,['mdiascorreia86@gmail.com'],fail_silently=False)
 
     return redirect("Tienda")
