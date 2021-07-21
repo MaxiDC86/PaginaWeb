@@ -49,7 +49,6 @@ def limpiar_carro(request):
 def comprar(request):
 
     # carro = Carro(request)
-   
 
     asunto = "Cotizacion"
 
