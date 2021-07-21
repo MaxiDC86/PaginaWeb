@@ -13,8 +13,6 @@ def contacto(request):
 
             infForm = miFormulario.cleaned_data
 
-            print(infForm)
-
             infForm['asunto'] = infForm['nombre'] + ' ' + infForm['asunto']
 
             infForm['mensaje'] = infForm['mensaje'] + '  ' + infForm['email']
