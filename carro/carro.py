@@ -1,3 +1,5 @@
+from django.core.mail import send_mail
+
 class Carro:
     def __init__(self, request):
         self.request = request
@@ -46,3 +48,11 @@ class Carro:
     def limpiar_carro(self):
         self.session["carro"] = {}
         self.session.modified = True
+
+    def comprar(self):
+
+        for key, value in request.session.carro.items:
+            carroCompra = carroCompra.append(value.nombre)
+            
+        carroCompraMail = "".join(carroCompra)
+        send_mail('Compra', str(carroCompraMail), 'pepe@gmail.com' ,['mdiascorreia86@gmail.com'],fail_silently=False,)
