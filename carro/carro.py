@@ -55,4 +55,4 @@ class Carro:
         carroCompra = self.session["carro"]
         carroCompra = str(carroCompra)
                    
-        send_mail('Compra', carroCompra, 'pepe@gmail.com' ,['mdiascorreia86@gmail.com'],fail_silently=False,)
+        send_mail('Compra', 'pedido de herramientas', 'pepe@gmail.com' ,['mdiascorreia86@gmail.com'],fail_silently=False,)
