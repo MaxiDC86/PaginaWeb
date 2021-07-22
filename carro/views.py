@@ -46,14 +46,10 @@ def limpiar_carro(request):
 
     return redirect("Tienda")
 
-def comprar(self, request):
+def comprar(request):
 
-    asunto = "Cotizacion"
+    carro = Carro(request)
 
-    mensaje = str(self.session["carro"])
-
-    email = "pepe@gmail.com"
-
-    send_mail(asunto, mensaje, email ,['mdiascorreia86@gmail.com'],fail_silently=False)
+    carro.comprar()
 
     return redirect("Tienda")
