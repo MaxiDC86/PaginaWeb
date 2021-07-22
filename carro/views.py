@@ -48,11 +48,11 @@ def limpiar_carro(request):
 
 def comprar(request):
 
-    # carro = Carro(request)
+    carro = Carro(request)
 
     asunto = "Cotizacion"
 
-    mensaje = "Hola quiero saber el precio de los siguentes repuestos"
+    mensaje = str(carro.producto)
 
     email = "pepe@gmail.com"
 
