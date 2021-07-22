@@ -52,17 +52,15 @@ class Carro:
 
     def comprar(self):
 
-        asunto = "PEDIDO DE COMPRA"
+        asunto = "PEDIDO DE COMPRA CON CARRITO"
+
         mensaje = ""
         for key, value in self.carro.items():
             mensaje = mensaje + value["nombre"]
-            mensaje = mensaje + str(value["cantidad"])
+            mensaje = mensaje +" cantidad: "+ str(value["cantidad"])
+            mensaje = mensaje +" $"+ str(value["precio"]) + "   "
 
-        mensaje = str(mensaje)
-
-        # mensaje = str(self.session["carro"])
-
-        email = "pepe@gmail.com"
+        email = "pepere@gmail.com"
 
         send_mail(asunto, mensaje, email ,['mdiascorreia86@gmail.com'],fail_silently=False)
 
