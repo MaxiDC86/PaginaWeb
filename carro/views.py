@@ -50,6 +50,6 @@ def comprar(request):
 
     carro = Carro(request)
 
-    carro.comprar()
+    carro.comprar(request)
 
     return redirect("Tienda")
