@@ -51,18 +51,20 @@ class Carro:
 
     def comprar(self,request):
 
-        asunto = "PEDIDO DE COMPRA CON CARRITO"
+        if self.request.user.is_authenticated:
 
-        mensaje = ""
-        for key, value in self.carro.items():
-            mensaje = mensaje + value["nombre"]
-            mensaje = mensaje +" cantidad: "+ str(value["cantidad"])
-            mensaje = mensaje +" $"+ str(value["precio"]) + "   "
-        mensaje = mensaje + str(self.request.user.username)  
-        mensaje = mensaje + str(self.request.user.email)
-        email = "maxisambo@gmail.com"
+            asunto = "PEDIDO DE COMPRA CON CARRITO"
 
-        send_mail(asunto, mensaje, email ,['mdiascorreia86@gmail.com'],fail_silently=False)
+            mensaje = ""
+            for key, value in self.carro.items():
+                mensaje = mensaje + value["nombre"]
+                mensaje = mensaje +" cantidad: "+ str(value["cantidad"])
+                mensaje = mensaje +" $"+ str(value["precio"]) + "   "
+            mensaje = mensaje + str(self.request.user.username) + "  " 
+            mensaje = mensaje + str(self.request.user.email)
+            email = "maxisambo@gmail.com"
 
-        self.session["carro"] = {}
-        self.session.modified = True
+            send_mail(asunto, mensaje, email ,['mdiascorreia86@gmail.com'],fail_silently=False)
+
+            self.session["carro"] = {}
+            self.session.modified = True
