@@ -50,7 +50,7 @@ class Carro:
         self.session["carro"] = {}
         self.session.modified = True
 
-    def comprar(self):
+    def comprar(self,request):
 
         asunto = "PEDIDO DE COMPRA CON CARRITO"
 
@@ -60,7 +60,7 @@ class Carro:
             mensaje = mensaje +" cantidad: "+ str(value["cantidad"])
             mensaje = mensaje +" $"+ str(value["precio"]) + "   "
 
-        email = "pepere@gmail.com"
+        email = str(request.user.email)
 
         send_mail(asunto, mensaje, email ,['mdiascorreia86@gmail.com'],fail_silently=False)
 
