@@ -53,7 +53,7 @@ class Carro:
     def comprar(self):
 
         asunto = "PEDIDO DE COMPRA"
-
+        mensaje = ""
         for key, value in self.carro.items():
             mensaje = mensaje + value["nombre"]
             mensaje = mensaje + value["cantidad"]
