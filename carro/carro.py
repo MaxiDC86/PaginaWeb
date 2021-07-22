@@ -60,7 +60,7 @@ class Carro:
             mensaje = mensaje +" cantidad: "+ str(value["cantidad"])
             mensaje = mensaje +" $"+ str(value["precio"]) + "   "
 
-        email = str(request.user.email)
+        email = str(self.request.user.email)
 
         send_mail(asunto, mensaje, email ,['mdiascorreia86@gmail.com'],fail_silently=False)
 
