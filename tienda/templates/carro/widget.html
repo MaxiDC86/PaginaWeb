@@ -16,8 +16,8 @@
   </thead>
 
   <tbody>
-    {% if request.session.carro.items %}
-        {% for key, value in request.session.carro.items %}
+    {% if request.session.carro.items %} {% for key, value in
+    request.session.carro.items %}
     <tr class="text-center">
       <td>{{value.nombre}}</td>
       <td>{{value.cantidad}}</td>
@@ -36,8 +36,7 @@
         {{value.precio}}
       </td>
     </tr>
-        {% endfor %}
-    {% else %}
+    {% endfor %} {% else %}
     <tr>
       <td colspam="3">
         <div class="alert alert-danger text-center">Sin productos.</div>
@@ -57,6 +56,10 @@
           >Comprar</a
         >
       </td>
+    </tr>
+    {% else %}
+    <tr>
+      <td>Debes iniciar sesión para comprar.</td>
     </tr>
     {% endif %}
   </tfoot>
