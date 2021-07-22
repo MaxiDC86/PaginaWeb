@@ -1,4 +1,5 @@
 from django.core.mail import send_mail
+import json
 
 class Carro:
     def __init__(self, request):
@@ -51,10 +52,19 @@ class Carro:
 
     def comprar(self):
 
-        asunto = "Cotizacion"
+        asunto = "PEDIDO DE COMPRA"
 
-        mensaje = str(self.session["carro"])
+        for key, value in self.carro.items():
+            mensaje = mensaje + value["nombre"]
+            mensaje = mensaje + value["cantidad"]
+
+        mensaje = str(mensaje)
+
+        # mensaje = str(self.session["carro"])
 
         email = "pepe@gmail.com"
 
         send_mail(asunto, mensaje, email ,['mdiascorreia86@gmail.com'],fail_silently=False)
+
+        self.session["carro"] = {}
+        self.session.modified = True
