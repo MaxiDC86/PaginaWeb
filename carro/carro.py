@@ -56,7 +56,7 @@ class Carro:
         mensaje = ""
         for key, value in self.carro.items():
             mensaje = mensaje + value["nombre"]
-            mensaje = mensaje + value["cantidad"]
+            mensaje = mensaje + str(value["cantidad"])
 
         mensaje = str(mensaje)
 
