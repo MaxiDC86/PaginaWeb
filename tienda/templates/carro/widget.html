@@ -50,6 +50,7 @@
     <tr>
       <td colspan="3">Total: $ {{importe_total_carro}}</td>
     </tr>
+    {% if request.user.is_authenticated == True %}
     <tr>
       <td>
         <a href="{% url 'carro:comprar' %}" class="btn btn-sm btn-success"
@@ -57,5 +58,6 @@
         >
       </td>
     </tr>
+    {% endif %}
   </tfoot>
 </table>
