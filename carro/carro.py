@@ -59,13 +59,13 @@ class Carro:
             for key, value in self.carro.items():
                 mensaje = mensaje + value["nombre"]
                 mensaje = mensaje +" cantidad: "+ str(value["cantidad"])
-                mensaje = mensaje +" $"+ str(value["precio"]) + "\n   "
-            mensaje = mensaje + str(self.request.user.username) + "\n  " 
-            mensaje = mensaje + str(self.request.user.last_name) + "\n  " 
+                mensaje = mensaje +" $"+ str(value["precio"]) + "\n"
+            mensaje = mensaje + str(self.request.user.username) + "\n" 
+            mensaje = mensaje + str(self.request.user.last_name) + "\n" 
             mensaje = mensaje + str(self.request.user.email)
             email = "maxisambo@gmail.com"
 
             send_mail(asunto, mensaje, email ,['mdiascorreia86@gmail.com'],fail_silently=False)
 
-            self.session["carro"] = {}
-            self.session.modified = True
+            # self.session["carro"] = {}
+            # self.session.modified = True

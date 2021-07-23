@@ -9,3 +9,10 @@ def tienda(request):
     productos = Producto.objects.all()
 
     return render(request,"tienda/tienda.html", {"categoria":categoria, "productos":productos} )
+
+def comprar(request):
+
+    categoria = CategoriaProd.objects.all()
+    productos = Producto.objects.all()
+
+    return render(request,"tienda/comprar.html", {"categoria":categoria, "productos":productos} )

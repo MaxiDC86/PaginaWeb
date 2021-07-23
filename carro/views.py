@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.core.mail import send_mail
 from .carro import Carro
 
 from tienda.models import Producto
@@ -52,4 +51,4 @@ def comprar(request):
 
     carro.comprar(request)
 
-    return redirect("Tienda")
+    return redirect("Comprar")
