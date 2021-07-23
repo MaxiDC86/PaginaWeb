@@ -61,6 +61,7 @@ class Carro:
                 mensaje = mensaje +" cantidad: "+ str(value["cantidad"])
                 mensaje = mensaje +" $"+ str(value["precio"]) + "   "
             mensaje = mensaje + str(self.request.user.username) + "  " 
+            mensaje = mensaje + str(self.request.user.last_name) + "  " 
             mensaje = mensaje + str(self.request.user.email)
             email = "maxisambo@gmail.com"
 
