@@ -15,4 +15,4 @@ def comprar(request):
     categoria = CategoriaProd.objects.all()
     productos = Producto.objects.all()
 
-    return render(request,"tienda/comprar.html", {"categoria":categoria, "productos":productos} )
+    return render(request,"comprar/comprar.html", {"categoria":categoria, "productos":productos} )
