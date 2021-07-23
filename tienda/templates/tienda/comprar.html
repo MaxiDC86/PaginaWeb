@@ -1,10 +1,41 @@
 {% extends "PaginaWebApp/base.html" %} {%load static %} {% block content %}
+<table class="table table-bordered" style="background-color: white; color: black;">
+  <thead>
+    <tr>
+      <th colspam="3" class="text-center">Carro de compras</th>
+    <tr>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Suma</th>
+    </tr>
+  </thead>
 
-<div class="container" style= "background-color: white; color: black;">
+  <tbody>
+    {% if request.session.carro.items %}
+        {% for key, value in request.session.carro.items %}
+    <tr class="text-center">
+      <td>{{value.nombre}}</td>
+      <td>{{value.cantidad}}</td>
+      <td>{{value.precio}}</td>
+    </tr>
+        {% endfor %}
+    {% else %}
+    {% endif %}
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="3">Total: $ {{importe_total_carro}}</td>
+    </tr>
+    {% if request.user.is_authenticated == True %}
+    <tr>
+      <td>
+        <a href="{% url 'carro:comprar' %}" class="btn btn-sm btn-success"
+          >Comprar</a
+        >
+      </td>
+    </tr>
+    {% else %}
 
-  {% include "carro/widget.html" %}
-
-
-</div>
+</table>
 
 {% endblock %}git log
