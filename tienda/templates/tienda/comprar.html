@@ -64,15 +64,17 @@
         <div class="container__payment">
           <div class="block-heading">
             <h2>Card Payment</h2>
-            <p>This is an example of a Mercado Pago integration</p>
+
           </div>
           <div class="form-payment">
             <div class="products">
               <h2 class="title">Summary</h2>
+              {% for key, value in request.session.carro.items %}
               <div class="item">
                 <span class="price" id="summary-price"></span>
-                <p class="item-name">Book x <span id="summary-quantity"></span></p>
+                <p class="item-name">{{value.nombre}}<span id="summary-quantity"></span></p>
               </div>
+              {% endfor %}
               <div class="total">Total<span class="price" id="summary-total"></span></div>
             </div>
             <div class="payment-details">
@@ -120,7 +122,7 @@
                       <input type="hidden" id="amount" />
                       <input type="hidden" id="description" />
                       <br>
-                      <button id="form-checkout__submit" type="submit" class="btn btn-primary btn-block">Pay</button>
+                      <button id="form-checkout__submit" type="submit" class="btn btn-primary btn-block">Pagar</button>
                       <br>
                       <a id="go-back">
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 10 10" class="chevron-left">
