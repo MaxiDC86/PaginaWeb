@@ -32,14 +32,16 @@
                             <img class="img-fluid mx-auto d-block image" src="{% static 'img/product.png' %}">
                           </div>
                           <div class="col-md-4 product-detail">
-                            <h5>Product</h5>
+                            {% for key, value in request.session.carro.items %}
+                            <h5>{{value.nombre}}</h5>
                             <div class="product-info">
                               <p><b>Description: </b><span id="product-description">Some book</span><br>
-                              <b>Author: </b>Dale Carnegie<br>
-                              <b>Number of pages: </b>250<br>
-                              <b>Price:</b> $ <span id="unit-price">10</span></p>
+                           
+                           
+                              <b>Price:</b> $ <span id="unit-price">{{value.precio}}</span></p>
                             </div>
                           </div>
+                          {% endfor %}
                           <div class="col-md-3 product-detail">
                             <label for="quantity"><h5>Cantidad</h5></label>
                             <input type="number" id="quantity" value="1" class="form-control">
