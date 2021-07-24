@@ -1,5 +1,5 @@
 //REPLACE WITH YOUR PUBLIC KEY AVAILABLE IN: https://www.mercadopago.com/developers/panel
-const mp = new MercadoPago('YOUR_PUBLIC_KEY');
+const mp = new MercadoPago('TEST-cf063386-7146-4a85-92b9-6cfcd9119ac1');
 
 function loadCardForm() {
     const productCost = document.getElementById('amount').value;
