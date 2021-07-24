@@ -1,42 +1,10 @@
-{% extends "PaginaWebApp/base.html" %} {%load static %} {% block content %}
-<table class="table table-bordered" style="background-color: white; color: black;">
-  <thead>
-    <tr>
-      <th colspam="3" class="text-center">Carro de compras</th>
-    <tr>
-      <th>Producto</th>
-      <th>Cantidad</th>
-      <th>Suma</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    {% if request.session.carro.items %}
-        {% for key, value in request.session.carro.items %}
-    <tr class="text-center">
-      <td>{{value.nombre}}</td>
-      <td>{{value.cantidad}}</td>
-      <td>{{value.precio}}</td>
-    </tr>
-        {% endfor %}
-    {% endif %}
-  </tbody>
-  <tfoot>
-    <tr>
-      <td colspan="3">Total: $ {{importe_total_carro}}</td>
-    </tr>
-    {% if request.user.is_authenticated == True %}
-    <tr>
-      <td>
-        <a href="" class="btn btn-sm btn-success"
-          >Pagar</a
-        >
-      </td>
-    </tr>
-    {% endif %}
-
-</table>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>paginawebmaxi-mercadopago</title>
 <script>
   // Agrega credenciales de SDK
     const mp = new MercadoPago('TEST-cf063386-7146-4a85-92b9-6cfcd9119ac1', {
@@ -55,4 +23,10 @@
         }
   });
   </script>
-{% endblock %}
+</head>
+<body>
+  
+</body>
+</html>
+
+
