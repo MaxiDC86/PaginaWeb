@@ -38,7 +38,7 @@
                           </div>
                           <div class="col-md-3 product-detail">
                             <label for="quantity"><h5>Cantidad</h5></label>
-                            <input type="number" id="quantity" value="{{value.cantidad}}" class="form-control">
+                            <label type="number" id="quantity" value="{{value.cantidad}}" class="form-control">
                           </div>
                         </div>
                       </div>
@@ -51,7 +51,7 @@
               <div class="col-md-12 col-lg-4">
                 <div class="summary">
                   <h3>Carrito</h3>
-                  <div class="summary-item"><span class="text">Subtotal</span><span  id="cart-total">{{importe_total_carro}}</span></div>
+                  <div class="summary-item"><span class="text">Subtotal</span><span value="{{importe_total_carro}}"  id="cart-total"></span></div>
                   <button class="btn btn-primary btn-lg btn-block" id="checkout-btn">Checkout</button>
                 </div>
               </div>
