@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'tienda/css/index.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://sdk.mercadopago.com/js/v2"></script>
-    <script type="text/javascript" src="js/index.js" defer></script>
+    <script type="text/javascript" src="{% static 'tienda/js/index.js' %}" defer></script>
   </head>
   <body>
     <main>
@@ -28,14 +28,14 @@
                       <div class="product-details">
                         <div class="row justify-content-md-center">
                           <div class="col-md-3">
-                            <img class="img-fluid mx-auto d-block image" src="img/product.png">
+                            <img class="img-fluid mx-auto d-block image" src="{% static 'img/product.png' %}">
                           </div>
                           <div class="col-md-4 product-detail">
                             <h5>Product</h5>
                             <div class="product-info">
                               <p><b>Description: </b><span id="product-description">Some book</span><br>
                               <b>Author: </b>Dale Carnegie<br>
-                              <b>Number of pages: </b>336<br>
+                              <b>Number of pages: </b>250<br>
                               <b>Price:</b> $ <span id="unit-price">10</span></p>
                             </div>
                           </div>
