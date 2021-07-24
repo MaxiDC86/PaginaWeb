@@ -22,6 +22,7 @@
           </div>
           <div class="content">
             <div class="row">
+              <span id="product-description">
               <div class="col-md-12 col-lg-8">
                 {% for key, value in request.session.carro.items %}
                 <div class="items">
@@ -46,6 +47,7 @@
                 </div>
                 {% endfor %}
               </div>
+            </span>
               <div class="col-md-12 col-lg-4">
                 <div class="summary">
                   <h3>Carrito</h3>
