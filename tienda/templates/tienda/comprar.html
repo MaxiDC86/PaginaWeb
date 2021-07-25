@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mercadopago - paginawebmaxi</title>
+    <title>MP - paginawebmaxi</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -13,52 +13,52 @@
   </head>
   <body>
     <main>
-      <!-- Shopping Cart -->
-      <section class="shopping-cart dark">
-        <div class="container container__cart">
-          <div class="block-heading">
-            <h2>Carrito de compra</h2>
+  <!-- Shopping Cart -->
+  <section class="shopping-cart dark">
+    <div class="container container__cart">
+      <div class="block-heading">
+        <h2>Carrito de compras</h2>
 
-          </div>
-          <div class="content">
-            <div class="row">
-              <span id="product-description">
-              <div class="col-md-12 col-lg-8">
-                {% for key, value in request.session.carro.items %}
-                <div class="items">
-                  <div class="product">
-                    <div class="info">
-                      <div class="product-details">
-                        <div class="row justify-content-md-center">
-                          <div class="col-md-4 product-detail">
-                            <h5>{{value.nombre}}</h5>
-                            <div class="product-info">                       
-                              <b>Precio:</b> $ <span id="unit-price">{{value.precio}}</span></p>
-                            </div>
-                          </div>
-                          <div class="col-md-3 product-detail">
-                            <label for="quantity"><h5>Cantidad</h5></label>
-                            <input type="number" id="quantity" value="{{value.cantidad}}" class="form-control">
-                          </div>
+      </div>
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <div class="items">
+              <div class="product">
+                <div class="info">
+                  <div class="product-details">
+                    <div class="row justify-content-md-center">
+                      <div class="col-md-3">
+                        <img class="img-fluid mx-auto d-block image" src="img/product.png">
+                      </div>
+                      <div class="col-md-4 product-detail">
+                        <h5>Product</h5>
+                        <div class="product-info">
+                          <p><b>Description: </b><span id="product-description">Some book</span><br>
+                          <b>Price:</b> $ <span id="unit-price">{{importe_total_carro}}</span></p>
                         </div>
+                      </div>
+                      <div class="col-md-3 product-detail">
+                        <label for="quantity"><h5>Quantity</h5></label>
+                        <input type="number" id="quantity" value="1" class="form-control">
                       </div>
                     </div>
                   </div>
                 </div>
-                {% endfor %}
-              </div>
-            </span>
-              <div class="col-md-12 col-lg-4">
-                <div class="summary">
-                  <h3>Carrito</h3>
-                  <div class="summary-item"><class class="text">Subtotal $<div value="{{importe_total_carro}}" id="amount">{{importe_total_carro}}</div></class></div>
-                  <button class="btn btn-primary btn-lg btn-block" id="checkout-btn">Checkout</button>
-                </div>
               </div>
             </div>
           </div>
+          <div class="col-md-12 col-lg-4">
+            <div class="summary">
+              <h3>Cart</h3>
+              <div class="summary-item"><span class="text">Subtotal</span><span class="price" id="cart-total"></span></div>
+              <button class="btn btn-primary btn-lg btn-block" id="checkout-btn">Checkout</button>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
       <!-- Payment -->
       <section class="payment-form dark">
         <div class="container__payment">
