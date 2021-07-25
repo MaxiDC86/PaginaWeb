@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'contacto',
     'tienda',
     'carro',
+    'process_payment',
 ]
 
 MIDDLEWARE = [

@@ -32,4 +32,6 @@ urlpatterns = [
     path('tienda/',include('tienda.urls')),
 
     path('carro/',include('carro.urls')),
+
+    path('process_payment/',include('process_payment.urls')),
 ] 
