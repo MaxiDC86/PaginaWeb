@@ -1,5 +1,7 @@
 from django.shortcuts import render
 import mercadopago
+import json
+from django.http import JsonResponse
 sdk = mercadopago.SDK("TEST-1682191286570055-072420-081eaf21dbcddd9e349e4e05abdcad98-97637851")
 
 # Create your views here.
@@ -21,4 +23,4 @@ def process_payment(request):
         preference = preference_response["response"]
 
 
-    return render(preference)
+    return JsonResponse({preference})
