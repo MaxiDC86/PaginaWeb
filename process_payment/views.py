@@ -7,9 +7,7 @@ sdk = mercadopago.SDK("TEST-1682191286570055-072420-081eaf21dbcddd9e349e4e05abdc
 # Create your views here.
 def process_payment(request):
 
-    if request.method =="POST":
-        # Create a preference item
-        preference_data = {
+    preference_data = {
         "items": [
         {
             "title": "My Item",
@@ -19,8 +17,8 @@ def process_payment(request):
         ]
         }
 
-        preference_response = sdk.preference().create(preference_data)
-        preference = preference_response["response"]
+    preference_response = sdk.preference().create(preference_data)
+    preference = preference_response["response"]
 
 
     return JsonResponse({preference})
