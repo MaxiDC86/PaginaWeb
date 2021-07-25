@@ -21,4 +21,4 @@ def process_payment(request):
     preference = preference_response["response"]
 
 
-    return JsonResponse({preference})
+    return JsonResponse({})
