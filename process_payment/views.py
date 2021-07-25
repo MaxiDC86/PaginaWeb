@@ -6,4 +6,4 @@ def process_payment(request):
     print("hello payment")
     print(request)
 
-    return render("hello payment")
+    return render(request,"PaginaWebApp/home.html" )
