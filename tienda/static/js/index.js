@@ -131,10 +131,10 @@ document.getElementById('go-back').addEventListener('click', function(){
 
 //Handle price update
 function updatePrice(){
-    let quantity = document.getElementById('quantity').value;
-    let unitPrice = document.getElementById('unit-price').innerText;
-    let amount = parseInt(unitPrice) * parseInt(quantity);
+    
+    let amount = document.getElementById('cart-total').value;
 
+    // writing on the html
     document.getElementById('cart-total').innerText = '$ ' + amount;
     document.getElementById('summary-price').innerText = '$ ' + unitPrice;
     document.getElementById('summary-quantity').innerText = quantity;
